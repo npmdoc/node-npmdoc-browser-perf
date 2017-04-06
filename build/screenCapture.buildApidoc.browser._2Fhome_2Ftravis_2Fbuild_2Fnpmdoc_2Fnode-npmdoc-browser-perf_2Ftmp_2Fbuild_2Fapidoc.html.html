@@ -1,0 +1,855 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/axemclion/browser-perf#readme">browser-perf (v1.4.11)</a>
+</h1>
+<h4>Measure browser rendering performance metrics</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf">module browser-perf</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.docs">
+            function <span class="apidocSignatureSpan">browser-perf.</span>docs
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.runner">
+            function <span class="apidocSignatureSpan">browser-perf.</span>runner
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">browser-perf.</span>actions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">browser-perf.</span>docs.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">browser-perf.</span>helpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">browser-perf.</span>options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">browser-perf.</span>runner.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf.actions">module browser-perf.actions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.actions.login">
+            function <span class="apidocSignatureSpan">browser-perf.actions.</span>login
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.actions.scroll">
+            function <span class="apidocSignatureSpan">browser-perf.actions.</span>scroll
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.actions.wait">
+            function <span class="apidocSignatureSpan">browser-perf.actions.</span>wait
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf.docs">module browser-perf.docs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.docs.docs">
+            function <span class="apidocSignatureSpan">browser-perf.</span>docs
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf.docs.prototype">module browser-perf.docs.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.docs.prototype.get">
+            function <span class="apidocSignatureSpan">browser-perf.docs.prototype.</span>get
+            <span class="apidocSignatureSpan">(metric)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.docs.prototype.getProp">
+            function <span class="apidocSignatureSpan">browser-perf.docs.prototype.</span>getProp
+            <span class="apidocSignatureSpan">(metric, prop)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf.helpers">module browser-perf.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.helpers.deepEquals">
+            function <span class="apidocSignatureSpan">browser-perf.helpers.</span>deepEquals
+            <span class="apidocSignatureSpan">(global, prop, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.helpers.extend">
+            function <span class="apidocSignatureSpan">browser-perf.helpers.</span>extend
+            <span class="apidocSignatureSpan">(obj1, obj2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.helpers.fnCall">
+            function <span class="apidocSignatureSpan">browser-perf.helpers.</span>fnCall
+            <span class="apidocSignatureSpan">(fn, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.helpers.metrics">
+            function <span class="apidocSignatureSpan">browser-perf.helpers.</span>metrics
+            <span class="apidocSignatureSpan">(value, category, source, unit, importance, tags)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf.options">module browser-perf.options</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.options.scrub">
+            function <span class="apidocSignatureSpan">browser-perf.options.</span>scrub
+            <span class="apidocSignatureSpan">(cfg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">browser-perf.options.</span>sanitizers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf.runner">module browser-perf.runner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.runner.runner">
+            function <span class="apidocSignatureSpan">browser-perf.</span>runner
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.browser-perf.runner.prototype">module browser-perf.runner.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.runner.prototype.attachBrowser_">
+            function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>attachBrowser_
+            <span class="apidocSignatureSpan">(sessionId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.runner.prototype.config">
+            function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>config
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.runner.prototype.setupMetrics_">
+            function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>setupMetrics_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.runner.prototype.start">
+            function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>start
+            <span class="apidocSignatureSpan">(sessionId, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.runner.prototype.stop">
+            function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>stop
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf" id="apidoc.module.browser-perf">module browser-perf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.docs" id="apidoc.element.browser-perf.docs">
+        function <span class="apidocSignatureSpan">browser-perf.</span>docs
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">docs = function (source) {
+	var glob = require('glob');
+	var fs = require('fs');
+	var path = require('path');
+
+	var files;
+	if (typeof source !== 'undefined' &amp;&amp; typeof source === 'string') {
+		files = [source + '.json'];
+	} else if (Array.isArray(source)) {
+		files = source.map(function(file) {
+			return file + (path.extname(file) !== '.json' ? '.json' : '');
+		});
+	} else {
+		files = glob.sync('*.json', {
+			cwd: __dirname
+		});
+	}
+
+	this.metrics = {};
+	for (var i = 0; i &lt; files.length; i++) {
+		var fileContent = JSON.parse(fs.readFileSync(path.join(__dirname, files[i]), 'utf-8'));
+		for (var key in fileContent) {
+			this.metrics[key] = fileContent[key];
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.runner" id="apidoc.element.browser-perf.runner">
+        function <span class="apidocSignatureSpan">browser-perf.</span>runner
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Runner(opts) {
+	this.opts = options.scrub(opts);
+	this.metrics = null;
+	this.browser = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf.actions" id="apidoc.module.browser-perf.actions">module browser-perf.actions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.actions.login" id="apidoc.element.browser-perf.actions.login">
+        function <span class="apidocSignatureSpan">browser-perf.actions.</span>login
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">login = function (cfg) {
+	cfg = cfg || {};
+	debug = require('debug')('bp:actions:login');
+	return function(browser) {
+		debug('Loading login form');
+		return browser.get(cfg.page).then(function() {
+			debug('Filling in Username');
+			return browser.elementByCssSelector(cfg.username.field)
+		}).then(function(el) {
+			return el.type(cfg.username.val || cfg.username.value);
+		}).then(function() {
+			debug('Filling in Password');
+			return browser.elementByCssSelector(cfg.password.field);
+		}).then(function(el) {
+			return el.type(cfg.password.val || cfg.password.value);
+		}).then(function() {
+			return browser.elementByCssSelector(cfg.submit.field);
+		}).then(function(el) {
+			debug('Clicking submit');
+			return el.click();
+		}).then(function() {
+			return browser.sleep(5000);
+		});
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.actions.scroll" id="apidoc.element.browser-perf.actions.scroll">
+        function <span class="apidocSignatureSpan">browser-perf.actions.</span>scroll
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scroll = function (cfg) {
+	cfg = cfg || {};
+
+	function scroll(browser) {
+
+		var raf_scroll = jsmin(fs.readFileSync(__dirname + '/page_scripts/raf_scroll.js', 'utf-8')),
+			chrome_scroll = jsmin(fs.readFileSync(__dirname + '/page_scripts/chrome_scroll.js', 'utf-8')),
+			gesture_common = jsmin(fs.readFileSync(__dirname + '/page_scripts/gesture_common.js', 'utf-8'));
+
+		var runner = function(opts) {
+			console.log("Scrolling with ", opts);
+			window.__scrollActionDone = false;
+			window.__scrollAction = new __ScrollAction(function() {
+				window.__scrollActionDone = true;
+			});
+			window.__scrollAction.start({
+				element: eval(opts.el),
+				left_start_percentage: opts.left_start_percentage,
+				top_start_percentage: opts.top_start_percentage,
+				direction: opts.direction,
+				speed: opts.speed,
+				gesture_source_type: opts.gesture_source_type
+			});
+		};
+
+		debug('Initializing Scroll function');
+		return browser.execute(gesture_common + chrome_scroll + raf_scroll + helpers.fnCall(runner, {
+			left_start_percentage: 0.5,
+			top_start_percentage: 0.5,
+			direction: cfg.direction || 'down',
+			speed: cfg.speed || 800,
+			gesture_source_type: 0,
+			el: cfg.scrollElement || 'document.body'
+		})).then(function() {
+			debug('Waiting for Scrolling to finish');
+			return browser.waitFor({
+				asserter: wd.asserters.jsCondition('(window.__scrollActionDone === true)', false),
+				timeout: 1000 * 60 * 10,
+				pollFreq: cfg.pollFreq || 2000
+			});
+		})
+	};
+
+	scroll.setup = function(cfg) {
+		cfg.browsers = cfg.browsers.map(function(browser) {
+			if (browser.browserName &amp;&amp; (browser.browserName.match(/android/i) || browser.browserName.match(/chrome/i))) {
+				helpers.extend(browser, {
+					chromeOptions: {
+						args: ['--enable-gpu-benchmarking', '--enable-thread-composting']
+					}
+				});
+			}
+			return browser;
+		});
+		return Q(cfg);
+	};
+
+	return scroll;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.actions.wait" id="apidoc.element.browser-perf.actions.wait">
+        function <span class="apidocSignatureSpan">browser-perf.actions.</span>wait
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wait = function (cfg) {
+	cfg = cfg || {};
+	var debug = require('debug')('bp:actions:wait');
+	return function(browser) {
+		var duration = cfg || 5000;
+		debug('Waiting for some time - %d', duration);
+		return browser.sleep(duration);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf.docs" id="apidoc.module.browser-perf.docs">module browser-perf.docs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.docs.docs" id="apidoc.element.browser-perf.docs.docs">
+        function <span class="apidocSignatureSpan">browser-perf.</span>docs
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">docs = function (source) {
+	var glob = require('glob');
+	var fs = require('fs');
+	var path = require('path');
+
+	var files;
+	if (typeof source !== 'undefined' &amp;&amp; typeof source === 'string') {
+		files = [source + '.json'];
+	} else if (Array.isArray(source)) {
+		files = source.map(function(file) {
+			return file + (path.extname(file) !== '.json' ? '.json' : '');
+		});
+	} else {
+		files = glob.sync('*.json', {
+			cwd: __dirname
+		});
+	}
+
+	this.metrics = {};
+	for (var i = 0; i &lt; files.length; i++) {
+		var fileContent = JSON.parse(fs.readFileSync(path.join(__dirname, files[i]), 'utf-8'));
+		for (var key in fileContent) {
+			this.metrics[key] = fileContent[key];
+		}
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf.docs.prototype" id="apidoc.module.browser-perf.docs.prototype">module browser-perf.docs.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.docs.prototype.get" id="apidoc.element.browser-perf.docs.prototype.get">
+        function <span class="apidocSignatureSpan">browser-perf.docs.prototype.</span>get
+        <span class="apidocSignatureSpan">(metric)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (metric) {
+	return this.metrics[metric] || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.docs.prototype.getProp" id="apidoc.element.browser-perf.docs.prototype.getProp">
+        function <span class="apidocSignatureSpan">browser-perf.docs.prototype.</span>getProp
+        <span class="apidocSignatureSpan">(metric, prop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProp = function (metric, prop) {
+	return (typeof this.metrics[metric] !== 'undefined' ? this.metrics[metric][prop] : undefined);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf.helpers" id="apidoc.module.browser-perf.helpers">module browser-perf.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.helpers.deepEquals" id="apidoc.element.browser-perf.helpers.deepEquals">
+        function <span class="apidocSignatureSpan">browser-perf.helpers.</span>deepEquals
+        <span class="apidocSignatureSpan">(global, prop, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deepEquals = function (global, prop, val) {
+	var props = prop.split('.');
+	for (var i = 0; i &lt; props.length; i++) {
+		if (typeof global !== 'object' || global === null){
+			return false;
+		}
+		
+		if (typeof global[props[i]] === 'undefined') {
+			return false;
+		}
+		global = global[props[i]];
+	}
+	return global === val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.helpers.extend" id="apidoc.element.browser-perf.helpers.extend">
+        function <span class="apidocSignatureSpan">browser-perf.helpers.</span>extend
+        <span class="apidocSignatureSpan">(obj1, obj2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (obj1, obj2) {
+	if (typeof obj1 !== 'object' &amp;&amp; !obj1) {
+		obj1 = {};
+	}
+	if (typeof obj2 !== 'object' &amp;&amp; !obj2) {
+		obj2 = {};
+	}
+	for (var key in obj2) {
+		if (Array.isArray(obj1[key]) &amp;&amp; Array.isArray(obj2[key])) {
+			obj1[key] = obj1[key].concat(obj2[key]);
+		} else if (typeof obj1[key] === 'object' &amp;&amp; typeof obj2[key] === 'object' &amp;&amp; !Array.isArray(obj1[key]) &amp;&amp; !Array.isArray(obj2[
+key])) {
+			obj1[key] = extend(obj1[key], obj2[key]);
+		} else {
+			obj1[key] = obj2[key];
+		}
+	}
+	return obj1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.helpers.fnCall" id="apidoc.element.browser-perf.helpers.fnCall">
+        function <span class="apidocSignatureSpan">browser-perf.helpers.</span>fnCall
+        <span class="apidocSignatureSpan">(fn, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fnCall = function (fn, args) {
+		args = args || '';
+		if (typeof args === 'object') {
+			args = JSON.stringify(args);
+		}
+		return '(' + jsmin(fn.toString()) + '(' + args + '));';
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.helpers.metrics" id="apidoc.element.browser-perf.helpers.metrics">
+        function <span class="apidocSignatureSpan">browser-perf.helpers.</span>metrics
+        <span class="apidocSignatureSpan">(value, category, source, unit, importance, tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">metrics = function (value, category, source, unit, importance, tags) {
+	return {
+		value: value,
+		unit: unit || 'ms',
+		category: category,
+		source: source,
+		tags: tags || [],
+		importance: importance || 0
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf.options" id="apidoc.module.browser-perf.options">module browser-perf.options</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.options.scrub" id="apidoc.element.browser-perf.options.scrub">
+        function <span class="apidocSignatureSpan">browser-perf.options.</span>scrub
+        <span class="apidocSignatureSpan">(cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scrub = function (cfg) {
+		cfg = cfg || {};
+		sanitizers.forEach(function(sanitizer, i) {
+			cfg = sanitizer(cfg);
+		});
+		return cfg;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf.runner" id="apidoc.module.browser-perf.runner">module browser-perf.runner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.runner.runner" id="apidoc.element.browser-perf.runner.runner">
+        function <span class="apidocSignatureSpan">browser-perf.</span>runner
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Runner(opts) {
+	this.opts = options.scrub(opts);
+	this.metrics = null;
+	this.browser = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.browser-perf.runner.prototype" id="apidoc.module.browser-perf.runner.prototype">module browser-perf.runner.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.runner.prototype.attachBrowser_" id="apidoc.element.browser-perf.runner.prototype.attachBrowser_">
+        function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>attachBrowser_
+        <span class="apidocSignatureSpan">(sessionId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attachBrowser_ = function (sessionId) {
+	if (this.browser === null) {
+		this.browser = wd.promiseRemote(this.opts.selenium);
+		this.browser.on('status', function(data) {
+			//log.debug(data);
+		});
+		this.browser.on('command', function(meth, path, data) {
+			if (data &amp;&amp; typeof data === 'object') {
+				var data = JSON.stringify(data);
+			}
+			debug(meth, (path || '').substr(0, 70), (data || '').substr(0, 70));
+		});
+		return this.browser.attach(sessionId);
+	} else {
+		return Q();
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.runner.prototype.config" id="apidoc.element.browser-perf.runner.prototype.config">
+        function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>config
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function (cb) {
+	var me = this;
+	this.setupMetrics_().then(function() {
+		cb(null, me.opts);
+	}, function(err) {
+		cb(err);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.runner.prototype.setupMetrics_" id="apidoc.element.browser-perf.runner.prototype.setupMetrics_">
+        function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>setupMetrics_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupMetrics_ = function () {
+	var me = this;
+	if (this.metrics === null) {
+		this.metrics = new Metrics(this.opts.metrics);
+		return this.metrics.setup(this.opts);
+	} else {
+		return Q();
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.runner.prototype.start" id="apidoc.element.browser-perf.runner.prototype.start">
+        function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>start
+        <span class="apidocSignatureSpan">(sessionId, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (sessionId, cb) {
+	var me = this;
+	if (typeof cb !== 'function') {
+		cb = function() {};
+	}
+	this.setupMetrics_().then(function() {
+		return me.attachBrowser_(sessionId);
+	}).then(function() {
+		me.metrics.start(me.browser).then(cb, cb);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.runner.prototype.stop" id="apidoc.element.browser-perf.runner.prototype.stop">
+        function <span class="apidocSignatureSpan">browser-perf.runner.prototype.</span>stop
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (cb) {
+	var me = this;
+	this.metrics.teardown(this.browser).then(function() {
+		return me.metrics.getResults();
+	}).then(function(data) {
+		cb(undefined, data);
+	}, function(err) {
+		cb(err, null);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
