@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.browser-perf.browser-perf">
+            function <span class="apidocSignatureSpan"></span>browser-perf
+            <span class="apidocSignatureSpan">(url, cb, cfg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.browser-perf.docs">
             function <span class="apidocSignatureSpan">browser-perf.</span>docs
             <span class="apidocSignatureSpan">(source)</span>
@@ -302,6 +311,43 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.browser-perf" id="apidoc.module.browser-perf">module browser-perf</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.browser-perf.browser-perf" id="apidoc.element.browser-perf.browser-perf">
+        function <span class="apidocSignatureSpan"></span>browser-perf
+        <span class="apidocSignatureSpan">(url, cb, cfg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function main(url, cb, cfg) {
+	var opts = require(&#x27;./options&#x27;).scrub(cfg),
+		errors = [],
+		results = [];
+	var res = [],
+		err = [];
+	opts.browsers.map(function(browserConfig) {
+		return function() {
+			return runOnBrowser(url, browserConfig, opts).then(function(data) {
+				data._browserName = browserConfig.browserName;
+				data._url = url;
+				res.push(data);
+			}, function(error) {
+				if (typeof error === &#x22;object&#x22; &#x26;&#x26; error.code === &#x27;ECONNREFUSED&#x27;) {
+					error.errno = &#x27;GRID_CONFIG_ERROR&#x27;;
+				}
+				err.push(error);
+			});
+		}
+	}).reduce(Q.when, Q()).then(function() {
+		cb(err.length === 0 ? undefined : err, res);
+	}, function(err) {
+		cb(err);
+	}).done();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
