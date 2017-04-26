@@ -1,6 +1,6 @@
 # npmdoc-browser-perf
 
-#### api documentation for  [browser-perf (v1.4.11)](https://github.com/axemclion/browser-perf#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-browser-perf.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-browser-perf) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-browser-perf.svg)](https://travis-ci.org/npmdoc/node-npmdoc-browser-perf)
+#### basic api documentation for  [browser-perf (v1.4.11)](https://github.com/axemclion/browser-perf#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-browser-perf.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-browser-perf) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-browser-perf.svg)](https://travis-ci.org/npmdoc/node-npmdoc-browser-perf)
 
 #### Measure browser rendering performance metrics
 
